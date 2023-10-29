@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PopUp Boxes</title>
+    </head>
+    <link href="https://cdn.jsdelivr.net/npm/boostrap@5.3.2/dist/css/boostrap.min.css" rel="stylesheet" >
+    <script  src="https://cdn.jsdelivr.net/npm/boostrap@5.3.2/dist/css/bundle.min.js></script"></script>
+    <body>
+        <h1 id="demo1"></h1>
+        <h1 id="demo2"></h1>
+        <button type="button" class="btn btn-outline-primary m-5 p-2" onclick="alertbox()">Alert</button>
+        <button type="button" class="btn btn-outline-primary m-5 p-2" onclick="promptbox()">Prompt</button>
+        <button type="button" class="btn btn-outline-primary m-5 p-2" onclick="confirmbox()">Confirm</button>
+
+        <script>
+            function alertbox(){
+                alert('This is an alert message! Click OK to continue.')
+            }
+
+            function promptbox(){
+                let person = prompt("Please enter your name");
+                let text;
+                if (person == null || person == "") {
+                    text = "User cancelled the prompt.";
+                } else {
+                    text = "Hello" + person + "! How are you today?";
+                }            
+                document.getElementById('demo1').innerHTML = text;
+            }
+
+            function confirmbox(){
+                if (confirm("Press a button!")) {
+                    message = "You pressed OK on confirm!";
+                } else {
+                    message = "You pressed cancel on confirm!";
+                }
+                document.getElementsById('demo2').innerHTML = message;
+            }
+        </script>
+    </body>
+</html>
